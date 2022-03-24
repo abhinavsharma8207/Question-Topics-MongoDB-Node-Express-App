@@ -1,0 +1,23 @@
+{
+  "name": "question-topics-mongodb-node-express-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "format": "prettier --single-quote --check ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
+    "mongodb": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "prettier": "^2.4.1"
+  }
+}
