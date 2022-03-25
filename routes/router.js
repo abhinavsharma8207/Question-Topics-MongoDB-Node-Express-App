@@ -13,6 +13,8 @@ router.route('/search').get(async function (_req, res) {
   var descendants = [];
   const dbConnect = dbo.getDb();
   const topic = await dbConnect.collection("topics").findOne({_id:_req.query.search});
+  if(topic)
+  {
   const children = await dbConnect.collection("topics").find({left:{$gt:topic.left}, 
   right:{$lt:topic.right}}).sort({left:1}).toArray();
     for(let child in children){
@@ -29,6 +31,12 @@ router.route('/search').get(async function (_req, res) {
       }
   }).project({_id: 0, annotations: 0}).toArray()
     res.send(questions);
-  });
+}
+else{
+  res.send({
+    message: `Topic named ${_req.query.search} is not found`
+ });
+}
+});
 
   module.exports = router;
