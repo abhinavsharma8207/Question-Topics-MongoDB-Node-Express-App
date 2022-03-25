@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-const connectionString = "mongodb+srv://app_user:Dubai2019@cluster0.ub0qx.mongodb.net/QuestionsAndTopics?authSource=admin&replicaSet=atlas-lz246a-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
+const connectionString = "connection string shared in the docs";
 const client = new MongoClient(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
